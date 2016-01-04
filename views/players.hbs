@@ -1,0 +1,19 @@
+<h1>This Here is Broncos Country <h1>
+<table>
+  <th>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>age</td>
+    <td>Experience(years)</td>
+    <td>Position</td>
+  <th>
+  {{#each player}}
+  <tr>
+    <td>{{this.first_name}}</td>
+    <td>{{this.last_name}}</td>
+    <td>{{this.age}}</td>
+    <td>{{this.experience}}</td>
+    <td>{{this.position}}</td>
+  </tr>
+  {{/each}}
+</table>
