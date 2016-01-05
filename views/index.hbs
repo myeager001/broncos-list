@@ -1,2 +1,14 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<p>Welcome to Bronco's Country</p>
+<p>please Log in</p>
+<form  action="/auth/login" method="post">
+  <input type="text" name="username" value="">
+  <input type="password" name="password" value="">
+  <input type="submit">
+</form>
+<p>or sign up</p>
+<form  action="/auth/signup" method="post">
+  <input type="text" name="name" value="">
+  <input type="password" name="password" value="">
+  <input type="submit">
+</form>

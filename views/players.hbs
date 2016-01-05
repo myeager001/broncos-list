@@ -1,19 +1,36 @@
+{{#if authenticated}}
+<a href='/auth/logout'>Logout</a>
+{{else}}
+<a href='/'>please log in to modify list</a>
+{{/if}}
 <h1>This Here is Broncos Country <h1>
-<table>
-  <th>
-    <td>First Name</td>
-    <td>Last Name</td>
-    <td>age</td>
-    <td>Experience(years)</td>
-    <td>Position</td>
-  <th>
+  <div>
+    <span>First Name</span>
+    <span>Last Name</span>
+    <span>age</span>
+    <span>Experience(years)</span>
+    <span>Position</span>
+  </div>
   {{#each player}}
-  <tr>
-    <td>{{this.first_name}}</td>
-    <td>{{this.last_name}}</td>
-    <td>{{this.age}}</td>
-    <td>{{this.experience}}</td>
-    <td>{{this.position}}</td>
-  </tr>
+  <a href="/players/{{this.id}}">
+  <div>
+    <span>{{this.first_name}}</span>
+    <span>{{this.last_name}}</span>
+    <span>{{this.age}}</span>
+    <span>{{this.experience}}</span>
+    <span>{{this.position}}</span>
+  </div>
+</a>
   {{/each}}
 </table>
+{{#if authenticated}}
+<p>add a player</p>
+<form  action="/players" method="post"
+  <input type="text" name="first_name" placeholder="First Name">
+  <input type="text" name="last_name" placeholder="Last Name">
+  <input type="text" name="experience" placeholder="Years Pro">
+  <input type="text" name="position" placeholder="Position">
+  <input type="text" name="age" placeholder="age">
+  <input type="submit">
+</form>
+{{/if}}
