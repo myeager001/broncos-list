@@ -51,7 +51,7 @@ router.post('/login',
 router.post('/signup', function(req, res){
   knex('users').insert({username: req.body.name, hash: bcrypt.hashSync(req.body.password, 10)})
   .then(function(){
-    res.redirect('/players');
+    res.redirect('/');
   }).catch(function(error){
     console.log(error);
   });
